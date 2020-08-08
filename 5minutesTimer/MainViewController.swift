@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var timerButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var D_alertLabel: UILabel!
+    @IBOutlet weak var D_debugButton: UIButton!
     
     var timer = Timer()
     var vibTimer = Timer()
@@ -25,6 +26,9 @@ class MainViewController: UIViewController {
 
         timeLabel.text = MyTime.getRemainingTime(i: 0)
         
+        //for debug
+        D_alertLabel.isHidden = true
+        D_debugButton.isHidden = true
     }
     
     @objc func action() {
@@ -54,12 +58,8 @@ class MainViewController: UIViewController {
         let action = UIAlertAction(title: "OK", style: .default) { (action) in
             self.vibTimer.invalidate()
             self.D_alertLabel.text = "バイブOFF"
+            self.displayedTimer = 0
         }
-
-//        alert.addTextField { (alertTextField) in
-//            alertTextField.placeholder = "新しいカテゴリ名"
-//            textField = alertTextField
-//        }
 
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
@@ -67,7 +67,8 @@ class MainViewController: UIViewController {
     
     @IBAction func startTimer(_ sender: Any) {
         
-        timeLabel.text = MyTime.getRemainingTime(i: 0)
+        displayedTimer = 0
+        timeLabel.text = MyTime.getRemainingTime(i: displayedTimer)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(action), userInfo: nil, repeats: true)
         
     }

@@ -15,11 +15,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0k-oA-wdK">
+                                <rect key="frame" x="107" y="327.5" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="play.circle" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nZk-1P-Nr3"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFB-D8-FcS">
                                 <rect key="frame" x="40" y="215" width="331" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPC-MJ-t6E">
@@ -45,23 +56,25 @@
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0k-oA-wdK">
-                                <rect key="frame" x="107" y="327.5" width="200" height="200"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7Q-Ge-ttc">
+                                <rect key="frame" x="341" y="57" width="53" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" backgroundImage="play.circle" catalog="system">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="About">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nZk-1P-Nr3"/>
+                                    <segue destination="b9p-mJ-yvF" kind="presentation" id="Skh-14-ATj"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.87188910382123996" green="0.92202004156071971" blue="0.92950423208808297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="D_alertLabel" destination="BgQ-zN-Vwc" id="Q3G-E0-prT"/>
+                        <outlet property="D_debugButton" destination="AzE-MG-LpN" id="SnD-It-0rY"/>
                         <outlet property="timeLabel" destination="rFB-D8-FcS" id="n0H-ba-rtq"/>
                         <outlet property="timerButton" destination="Q0k-oA-wdK" id="SiF-Ka-LVV"/>
                     </connections>
@@ -69,6 +82,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-57.971014492753625" y="129.91071428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="10r-7Q-S7E">
+            <objects>
+                <viewController id="b9p-mJ-yvF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IoP-Rp-W4Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oYz-QV-xyg">
+                                <rect key="frame" x="30" y="78" width="354" height="625"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text" base64-UTF8="YES">
+DTVNaW5pdGVzIFRpbWVy44GvDTXliIbplpPjga7oqIjmuKzjgavnibnljJbjgZfjgZ8N44Ki44OX44Oq
+44Kx44O844K344On44Oz44Gn44GZ4oCoDS0tLeKAqA3mrovlv7XjgarjgYzjgonkurrplpPjgavjga8N
+44KE44KL5rCX44K544Kk44OD44OB44Go44GE44GG44KC44Gu44GMDeWtmOWcqOOBl+OBquOBhOOBneOB
+huOBp+OBmeOAgg3igKjohLPjga7ku5XntYTjgb/kuIoN44G+44Ga552A5omL44GZ44KL44GT44Go44Gn
+DeW+jOOBi+OCieOChOOCi+awl+OBjOa5p+OBhOOBpuOBj+OCi+OBneOBhuOBp+OBmeOAgg3igKjjgarj
+ga7jgafjgoLjgZfjgoIN5LuK44GZ44GQ44KE44KJ44Gq44GR44KM44Gw44GE44GR44Gq44GE44GT44Go
+44GMDeOBguOCi+WgtOWQiOOAgeOBvuOBmuOBrzXliIbplpPjgaDjgZHigKjnnYDmiYvjgZfjgabjgb/j
+gabjgY/jgaDjgZXjgYTjgIIN4oCo44Gd44KM44Gn44KC44KE44KL5rCX44GM5Ye644Gq44GL44Gj44Gf
+44KJDeOBhOOBo+OBn+OCk+WIpeOBruOBk+OBqOOCkuOBl+OBpg3msJfjgpLntJvjgonjgo/jgZvjgb7j
+gZfjgofjgYbjgIINDTXliIbplpPjgaDjgZHjga7nnYDmiYvjgpIX4oCo5L2V5bqm44KC57mw44KK6L+U
+44GX44Gm44GE44KL44Go44CBDeOBqeOBk+OBi+OBruOCv+OCpOODn+ODs+OCsOOBpw3pm4bkuK3lipvj
+gajjgoTjgovmsJfjgavmuoDjgaHjgZ/oh6rliIbjgavigKjlh7rkvJrjgYjjgb7jgZnjgILigKg
+</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="uVa-QG-1wA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n7S-LT-mae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618.84057971014499" y="129.91071428571428"/>
         </scene>
     </scenes>
     <resources>
